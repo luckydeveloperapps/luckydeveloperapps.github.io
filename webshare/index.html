@@ -208,6 +208,14 @@
             dropZone.style.borderColor = '#ccc';
             handleFiles(e.dataTransfer.files);
         });
+
+        // Check for host param in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const host = urlParams.get('host');
+        if (host) {
+            document.getElementById('ipAddress').value = host;
+            connect();
+        }
     </script>
 </body>
 </html>
